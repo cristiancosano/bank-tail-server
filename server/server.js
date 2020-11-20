@@ -14,6 +14,7 @@ module.exports.io = socketIO(server)
 require('./sockets/socket')
 
 app.use(express.static(publicPath))
+app.use("/images",express.static(path.resolve('/images')));
 
 server.listen(port, (error) =>{ 
     if(error) throw new Error(error)
